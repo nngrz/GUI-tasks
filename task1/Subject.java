@@ -29,10 +29,14 @@ public class Subject {
 
     @Override
     public String toString() {
+        // students.stream() converts the students Set<Student> into a Stream<Student>,
+        // allowing functional operations.
         String studentNames = students.stream()
+            // .map(Student::getName) transforms each Student object into just their name (String), 
+            // creating a Stream<String>.
             .map(Student::getName)
-            .reduce((a, b) -> a + ", " + b)
-            .orElse("None");
+            // combines all student names into a single comma-separated string.
+            .reduce((a, b) -> a + ", " + b);
 
         return name + ", teacher: " + (teacher != null ? teacher.getName() : "None") + ", students: " + studentNames;
     }
