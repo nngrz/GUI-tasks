@@ -21,7 +21,7 @@ public class Subject {
     }
 
     public void addStudent(Student student) throws TooManyStudentsException {
-        if (students.size() >= 10) {
+        if (students.size() >= MAX_STUDENTS) {
             throw new TooManyStudentsException("Too many students!");
         }
         students.add(student);
@@ -36,7 +36,8 @@ public class Subject {
             // creating a Stream<String>.
             .map(Student::getName)
             // combines all student names into a single comma-separated string.
-            .reduce((a, b) -> a + ", " + b);
+            .reduce((a, b) -> a + ", " + b)
+            .orElse("No students"); // handle empty case
 
         return name + ", teacher: " + (teacher != null ? teacher.getName() : "None") + ", students: " + studentNames;
     }
