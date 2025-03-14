@@ -2,10 +2,11 @@ package task1;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Subject {
     private String name;
-    private Person teacher;
+    private Person teacher = null;
     private Set<Student> students;
     private static final int MAX_STUDENTS = 30;
     
@@ -33,9 +34,7 @@ public class Subject {
             // .map(Student::getName) transforms each Student object into just their name (String), 
             // creating a Stream<String>.
             .map(Student::getName)
-            // combines all student names into a single comma-separated string.
-            .reduce((a, b) -> a + ", " + b)
-            .orElse("No students"); // handle empty case
+            .collect(Collectors.joining(", "));
 
         return name + ", teacher: " + (teacher != null ? teacher.getName() : "None") + ", students: " + studentNames;
     }
