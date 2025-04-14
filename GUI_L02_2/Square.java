@@ -1,20 +1,10 @@
 package GUI_L02_2;
 
-class Square extends Figure {
+class Square extends Rectangle {
     private double side;
 
     public Square(double side, String color) {
-        super(color);
+        super(side, side, color); // Call the Rectangle constructor with equal length and width 
         this.side = side;
-    }
-
-    @Override
-    public double getArea() {
-        return side * side;
-    }
-
-    @Override
-    public double getPerimeter() {
-        return 4 * side;
     }
 }
