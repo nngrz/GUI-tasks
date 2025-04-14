@@ -12,5 +12,6 @@ public class Main {
         System.out.println(number1);
         System.out.println("Point 2: " + p2);
         System.out.println(number2);
+        System.out.println("In total points created: " + Point.getCounter());
     }
 }
