@@ -1,17 +1,21 @@
 package exercises.SwingComponents;
 
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class JButtonFrame extends JFrame {
     public JButtonFrame() {
-
-        JButton button = new JButton("Click me!");
-
+        try {
+            // Force Metal look-and-feel which respects colors better
+            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        JButton button = new JButton("Click me!");     
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -25,7 +29,7 @@ public class JButtonFrame extends JFrame {
         });
 
         button.setToolTipText("Button");
-
+        
         add(button);
         pack();
         setLocationRelativeTo(null);
