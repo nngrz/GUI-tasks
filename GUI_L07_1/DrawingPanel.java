@@ -3,7 +3,6 @@ package GUI_L07_1;
 import javax.swing.*;
 import java.awt.*;
 
-
 public class DrawingPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
