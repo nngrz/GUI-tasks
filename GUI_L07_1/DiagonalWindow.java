@@ -1,7 +1,6 @@
 package GUI_L07_1;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class DiagonalWindow extends JFrame {
     public DiagonalWindow() {
