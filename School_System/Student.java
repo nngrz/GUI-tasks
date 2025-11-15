@@ -1,11 +1,8 @@
 package School_System;
 
-public class Student extends  {
-    private String name;
-    private int age;
+public class Student extends Person {
 
     public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
     }
 }

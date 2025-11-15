@@ -10,12 +10,16 @@ public class Person {
         this.age = age;
     }
 
-    public String sayHelloTo(Object object) {
-        return "Hi " + object.getName() + "!";
+    public void sayHelloTo(Person p) {
+        System.out.println( "Hi " + p.getName() + "!");
     }
 
     public String getName() {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }
