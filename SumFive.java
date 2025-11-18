@@ -3,9 +3,9 @@ public class SumFive {
 
         int targetSum = 5;
         int startI = 0;
-        int startJ = 5;
 
-        for (int i = startI, j = startJ; i <= targetSum; i++, j--) {
+        for (int i = startI; i <= targetSum; i++) {
+            int j = targetSum - i;
             System.out.println(i + " + " + j + " = " + targetSum);
         }
     }
