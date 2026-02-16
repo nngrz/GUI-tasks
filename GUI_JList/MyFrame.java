@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
-
 public class MyFrame extends JFrame {
 
     private JList<String> list;
